@@ -1,0 +1,91 @@
+#
+#  This routine will initialize 
+#    Cadence Place'n'Route	EDI142
+#    Cadence Synthesis		gen161
+#    Cadence Timing Analyser ETS/SSV ssv14
+#    Cadence RTL Compiler rc14
+#
+#    Synopsys v2015 Synthesis
+#    Synopsys PrimeTime v2018
+#
+#    Mentor Graphics QuestaSim v10.6_1
+#
+#  for use with the STM065 v5.3.6. cell libraries.
+#
+
+if [ $PWD = $HOME ]; then
+
+  echo ""
+  echo "Initialization will not be performed in the login directory!"
+  echo ""
+  echo "Use a subdirectory!"
+  echo ""
+
+else
+
+
+# Start defining the stuff.
+
+  export STM065_DIR=/usr/local-eit/cad2/cmpstm/stm065v536
+
+# Genus
+  export GENUS_DIR=/usr/local-eit/cad2/cadence/gen161
+  export PATH=$PATH:$GENUS_DIR/tools/bin
+
+
+# Initializing Encounter
+  export SOCDIR=/usr/local-eit/cad2/cadence/edi142
+  export ETSDIR=/usr/local-eit/cad2/cadence/ssv14
+  export RTLDIR=/usr/local-eit/cad2/cadence/rc14
+
+  export CDS_AUTO_64BIT=ALL
+ 
+  cdsPath=$SOCDIR/tools/bin
+  etsPath=$ETSDIR/tools/bin
+  rtlPath=$RTLDIR/tools/bin
+
+
+  if [ "`echo $path | grep $cdsPath`" = "" ]; then
+        export PATH=$etsPath:$cdsPath:$rtlPath:$PATH
+  fi
+
+
+# Initializing Synopsys
+  export SYNOPSYS=/usr/local-eit/cad2/synopsys/syn2015
+  export PTROOT=/usr/local-eit/cad2/synopsys/pt2018/pts/O-2018.06-SP5
+
+  SynPath=$SYNOPSYS/bin
+  PTPath=$PTROOT/bin
+
+  if [ "`echo $path | grep $SynPath`" = "" ]; then
+        export PATH=$SynPath:$PTPath:$PATH
+  fi
+
+  export SYNOPSYS_DESIGN_LIB=`pwd`
+
+  if [ ! -e .synopsys_dc.setup ]; then
+    cp $SYNOPSYS/dot.synopsys_dc.st65 .synopsys_dc.setup
+  fi
+
+
+# Initializing QuestaSim
+  export MGC_AMS_HOME=/usr/local-eit/cad2/mentor/ams171
+  export MODEL_SIM=$MGC_AMS_HOME/questasim/v10.6_1
+
+  test -f modelsim.ini || cp $MODEL_SIM/modelsim_st65.ini ./modelsim.ini
+
+  modelsimpath=$MODEL_SIM/bin
+
+  if [ "`echo $path | grep $modelsimpath`" = "" ]; then
+        export PATH=$modelsimpath:$PATH
+  fi
+
+
+
+# Licenses
+  export SNPSLMD_LICENSE_FILE=`/bin/cat $SYNOPSYS/../current_license`
+  export CDS_LIC_FILE=`/bin/cat $SOCDIR/../current_license`
+  export MGLS_LICENSE_FILE=`/bin/cat $MGC_AMS_HOME/../current_license`
+
+
+fi
