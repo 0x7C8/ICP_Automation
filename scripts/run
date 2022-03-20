@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# Main script
+#
+
+if [ $1 == "sim" ]
+then
+echo "Starting Questasim."
+source $SCRIPT_DIR/simulate
+
+elif [ $1 == "synth" ]
+then
+echo "Starting Genus."
+
+elif [ $1 == "layout" ]
+then
+echo "Starting Encounter."
+
+else
+    echo "Can you type?"
+fi

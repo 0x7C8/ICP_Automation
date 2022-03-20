@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Simulation script
+#
+
+if [ $2 == "r" ]
+then
+echo "Simulating RTL"
+
+elif [ $2 == "s" ]
+then
+echo "Simulating post-synthesis"
+
+elif [ $2 == "l" ]
+then
+echo "Simulating post-layout"
+
+else
+    echo "Can you type 2?"
+fi
+
+# source $SCRIPT_DIR/waves
