@@ -6,6 +6,10 @@
 if [ $2 == "r" ]
 then
 echo "Simulating RTL"
+# TODO
+# vlib 
+# vlog
+# vsim top -do $SCRIPT_DIR/waves.do 
 
 elif [ $2 == "s" ]
 then
