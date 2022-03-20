@@ -14,18 +14,19 @@
 #
 
 if [ $PWD = $HOME ]; then
-
   echo ""
   echo "Initialization will not be performed in the login directory!"
   echo ""
   echo "Use a subdirectory!"
   echo ""
-
 else
 
+######### Defining the environment and paths #########
 
-# Start defining the stuff.
+# Custom Project directory setup
+source $PWD/scripts/project_dirs
 
+# STM65 Libraries
   export STM065_DIR=/usr/local-eit/cad2/cmpstm/stm065v536
 
 # Genus
@@ -79,7 +80,6 @@ else
   if [ "`echo $path | grep $modelsimpath`" = "" ]; then
         export PATH=$modelsimpath:$PATH
   fi
-
 
 
 # Licenses

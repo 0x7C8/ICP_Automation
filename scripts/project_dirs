@@ -1,0 +1,15 @@
+#
+#  This routine sets up custom project directories
+#
+
+# Generating project directiories
+test -d rtl || mkdir ./rtl
+test -d sim || mkdir ./sim
+test -d synth || mkdir ./synth
+# test -d netlist || mkdir ./netlist
+
+export SCRIPT_DIR=$PWD/scripts
+export RTL_DIR=$PWD/rtl
+export SIM_DIR=$PWD/sim
+export SYNTH_DIR=$PWD/synth
+# export NETLIST_DIR=$PWD/netlist
