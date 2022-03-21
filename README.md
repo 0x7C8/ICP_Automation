@@ -17,6 +17,8 @@ setup_icp
 │   project_dirs  (user defined)
 
 run
+|   lib_list (TODO)
+|
 └── simulate
 │   └── sim_rtl (TODO)
 │   └── sim_synth (TODO)
