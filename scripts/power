@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Main script
+#
+
+cd $POWER_DIR
+test -d reports || mkdir ./reports
+
+# TODO: Choose power setting
+# export CLK_LIB=$CLK_LIB_LPHVT
+# export CLK_LIB=$CLK_LIB_LPLVT
+# export BUF_LIB=
+pt_shell -f $SCRIPT_DIR/power.tcl

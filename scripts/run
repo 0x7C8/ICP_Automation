@@ -6,20 +6,24 @@
 if [ $# -eq 0 ]
 then
     echo "Provide an option."
-    echo "Available options are: sim synth layout"
+    echo "Available options are: sim synth layout power"
 elif [ $1 == 'sim' ]
 then
     source $SCRIPT_DIR/simulate
 
 elif [ $1 == 'synth' ]
 then
-    echo "Starting Genus."
+    source $SCRIPT_DIR/synthesis
 
 elif [ $1 == 'layout' ]
 then
-    echo "Starting Encounter."
+    source $SCRIPT_DIR/layout
+
+elif [ $1 == 'power' ]
+then
+    source $SCRIPT_DIR/power
 
 else
     echo "Invalid option."
-    echo "Available options are: sim synth layout"
+    echo "Available options are: sim synth layout power"
 fi
