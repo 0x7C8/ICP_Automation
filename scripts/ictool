@@ -3,6 +3,9 @@
 # Main script
 #
 
+source $SCRIPT_DIR/lib_list
+source $SCRIPT_DIR/compile_list
+
 if [ $# -eq 0 ]
 then
     echo "Provide an option."

@@ -11,7 +11,6 @@ test -f modelsim.ini || cp $MODEL_SIM/modelsim_st65.ini ./modelsim.ini
 case $mode in
     r)
 	    echo "Simulating RTL"
-        source $SCRIPT_DIR/compile_list
         vlib work
         vcom -work work $COMPILE_FILES $TB_FILES 
 	    vsim work.$TOP_TB -do $SCRIPT_DIR/waves.do
