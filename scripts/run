@@ -2,19 +2,20 @@
 #
 # Main script
 #
+
 if [ $# -eq 0 ]
 then
     echo "Provide an option."
     echo "Available options are: sim synth layout"
-elif [ $1 == "sim" ]
+elif [ $1 == 'sim' ]
 then
     source $SCRIPT_DIR/simulate
 
-elif [ $1 == "synth" ]
+elif [ $1 == 'synth' ]
 then
     echo "Starting Genus."
 
-elif [ $1 == "layout" ]
+elif [ $1 == 'layout' ]
 then
     echo "Starting Encounter."
 

@@ -2,30 +2,28 @@
 #
 # Simulation script
 #
+read -p 'Choose simulation mode (r, s, l): ' mode
 
-if [ $2 -eq 0 ]
-then
-    echo "No simulation option provided."
-    echo "Available options are: r s l"
-elif [ $2 == "r" ]
-then
-    echo "Simulating RTL"
-    # TODO
-    # vlib 
-    # vlog
-    # vsim top -do $SCRIPT_DIR/waves.do 
-
-elif [ $2 == "s" ]
-then
-    echo "Simulating post-synthesis"
-
-elif [ $2 == "l" ]
-then
-    echo "Simulating post-layout"
-
-else
-    echo "Invalid sim option."
-    echo "Available options are: r s l"
-fi
+case $mode in
+    r)
+	echo "Simulating RTL"
+    	# TODO
+	# vlib 
+	# vlog
+	# vsim top -do $SCRIPT_DIR/waves.do
+	;;
+    s)
+	echo "Simulating post-synthesis!!!"
+    	# TODO
+	;;
+    l)
+	echo "Simulating post-layout"
+    	# TODO
+	;;
+    *)
+	echo "Invalid sim option."
+    	echo "Available options are: r s l"
+	;;
+esac
 
 # source $SCRIPT_DIR/waves
