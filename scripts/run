@@ -8,7 +8,6 @@ then
     echo "Available options are: sim synth layout"
 elif [ $1 == "sim" ]
 then
-    echo "Starting Questasim."
     source $SCRIPT_DIR/simulate
 
 elif [ $1 == "synth" ]
