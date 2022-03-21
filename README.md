@@ -11,9 +11,26 @@ echo "alias run='source [your_folder]/scripts/run'" >> ~/.bash_aliases
 reset
 ```
 
-## Considerations
-* `setup_icp` script can stop working if the institution changes their tools and their directories.
+## Script call structure
+```
+setup_icp
+│   project_dirs  (user defined)
 
+run
+└── simulate
+│   └── sim_rtl (TODO)
+│   └── sim_synth (TODO)
+│   └── sim_layout (TODO)
+│   │   waves.do (user defined)
+│
+└── synthesis (TODO)
+|   |   (TODO)
+│    
+└── layout (TODO)
+```
+
+## Considerations
+* `setup_icp` script can stop working if the institution changes tools and their directories.
 
 
 ## TODO
