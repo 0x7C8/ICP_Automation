@@ -73,8 +73,6 @@ source $PWD/scripts/project_dirs
   export MGC_AMS_HOME=/usr/local-eit/cad2/mentor/ams171
   export MODEL_SIM=$MGC_AMS_HOME/questasim/v10.6_1
 
-  test -f modelsim.ini || cp $MODEL_SIM/modelsim_st65.ini ./modelsim.ini
-
   modelsimpath=$MODEL_SIM/bin
 
   if [ "`echo $path | grep $modelsimpath`" = "" ]; then

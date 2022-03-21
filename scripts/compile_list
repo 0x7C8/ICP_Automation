@@ -1,0 +1,19 @@
+#
+#  This file contains ordered files to be compiled
+#
+
+COMPILE_FILES=" $RTL_DIR/matrix_multiplier_pkg.vhd \
+                $RTL_DIR/ROM_coeff.vhd
+                $RTL_DIR/generic_reg.vhd \
+                $RTL_DIR/generic_reg_array.vhd \ 
+                $RTL_DIR/generic_reg_matrix.vhd \
+                $RTL_DIR/element_multiplier.vhd \
+                $RTL_DIR/MU2.vhd \
+                $RTL_DIR/MM_op.vhd \
+                $RTL_DIR/MM_controller.vhd \
+                $RTL_DIR/matrix_multiplier.vhd "
+
+TB_FILES="$RTL_DIR/TB/matrix_multiplier_tb.vhd"
+
+TOP_TB="matrix_multiplier_tb.vhd"
+

@@ -7,7 +7,7 @@ Add custom commands to your command line and then reload the terminal:
 ```
 touch ~/.bash_aliases
 echo "alias icp='source [your_folder]/scripts/setup_icp'" >> ~/.bash_aliases
-echo "alias run='source [your_folder]/scripts/run'" >> ~/.bash_aliases
+echo "alias ictool='source [your_folder]/scripts/ictool'" >> ~/.bash_aliases
 ```
 
 ## Script call structure
@@ -15,10 +15,11 @@ echo "alias run='source [your_folder]/scripts/run'" >> ~/.bash_aliases
 setup_icp
 │   project_dirs  (user defined)
 
-run
-|   lib_list (TODO)
+ictool
+|   lib_list (user defined)
+|   compile_list (user defined)
 |
-└── simulate
+└── simulate (WIP)
 │   └── sim_rtl (TODO)
 │   └── sim_synth (TODO)
 │   └── sim_layout (TODO)
@@ -28,6 +29,9 @@ run
 |   |   (TODO)
 │    
 └── layout (TODO)
+│    
+└── power (WIP)
+    |   power.tcl
 ```
 
 ## Considerations
@@ -35,8 +39,4 @@ run
 
 
 ## TODO
-* What is modelsim.ini?
-* Add synthesis script
-* Improve simulation script
-* Add library list script
-* Add layout script
+* 
