@@ -3,24 +3,29 @@
 # Simulation script
 #
 
-if [ $2 == "r" ]
+if [ $2 -eq 0 ]
 then
-echo "Simulating RTL"
-# TODO
-# vlib 
-# vlog
-# vsim top -do $SCRIPT_DIR/waves.do 
+    echo "No simulation option provided."
+    echo "Available options are: r s l"
+elif [ $2 == "r" ]
+then
+    echo "Simulating RTL"
+    # TODO
+    # vlib 
+    # vlog
+    # vsim top -do $SCRIPT_DIR/waves.do 
 
 elif [ $2 == "s" ]
 then
-echo "Simulating post-synthesis"
+    echo "Simulating post-synthesis"
 
 elif [ $2 == "l" ]
 then
-echo "Simulating post-layout"
+    echo "Simulating post-layout"
 
 else
-    echo "Can you type 2?"
+    echo "Invalid sim option."
+    echo "Available options are: r s l"
 fi
 
 # source $SCRIPT_DIR/waves

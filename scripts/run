@@ -2,20 +2,24 @@
 #
 # Main script
 #
-
-if [ $1 == "sim" ]
+if [ $# -eq 0 ]
 then
-echo "Starting Questasim."
-source $SCRIPT_DIR/simulate
+    echo "Provide an option."
+    echo "Available options are: sim synth layout"
+elif [ $1 == "sim" ]
+then
+    echo "Starting Questasim."
+    source $SCRIPT_DIR/simulate
 
 elif [ $1 == "synth" ]
 then
-echo "Starting Genus."
+    echo "Starting Genus."
 
 elif [ $1 == "layout" ]
 then
-echo "Starting Encounter."
+    echo "Starting Encounter."
 
 else
-    echo "Can you type?"
+    echo "Invalid option."
+    echo "Available options are: sim synth layout"
 fi
