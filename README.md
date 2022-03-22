@@ -20,9 +20,6 @@ ictool
 |   compile_list (user defined)
 |
 └── simulate (WIP)
-│   └── sim_rtl (TODO)
-│   └── sim_synth (TODO)
-│   └── sim_layout (TODO)
 │   │   waves.do (user defined)
 │
 └── synthesis (TODO)
@@ -36,7 +33,3 @@ ictool
 
 ## Considerations
 * `setup_icp` script can stop working if the institution changes tools and their directories.
-
-
-## TODO
-* 

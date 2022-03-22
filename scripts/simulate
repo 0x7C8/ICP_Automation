@@ -2,33 +2,42 @@
 #
 # Simulation script
 #
-read -p 'Choose simulation mode (r, s, l): ' mode
+read -p 'Choose simulation mode (b, s, l): ' mode
 
 cd $SIM_DIR
 rm -Rf *
 test -f modelsim.ini || cp $MODEL_SIM/modelsim_st65.ini ./modelsim.ini
 
 case $mode in
-    r)
-	    echo "Simulating RTL"
+    b)
         vlib work
-        vcom -work work $COMPILE_FILES $TB_FILES 
-	    vsim work.$TOP_TB -do $SCRIPT_DIR/waves.do
+        vlog -work work $LIB_FILES
+        vcom -work work $COMPILE_FILES $TOP_FILE_B $TB_FILES 
+	    echo "Simulating behavioural model"
+        vsim work.$TOP_TB -do $SCRIPT_DIR/waves.do
 	;;
     s)
-	    echo "Simulating post-synthesis!!!"
-    	# TODO
-        # vlib 
-	    # vlog
-	    # vsim top -do $SCRIPT_DIR/waves.do
+        vlib work
+        # TODO: Depending on power-voltage choice append to LIB_FILES
+        # LIB_FILES = "$LIB_FILES"
+        vlog -work work $LIB_FILES $TOP_FILE_S
+        vcom -work work $TB_FILES 
+        echo "Simulating post-synthesis"
+        # TODO:
+        # vsim work.$TOP_TB -do $SCRIPT_DIR/waves.do
 	;;
     l)
-	    echo "Simulating post-layout"
-    	# TODO
+        vlib work
+        # TODO: Depending on power-voltage choice append to LIB_FILES
+        # LIB_FILES = "$LIB_FILES"
+        vlog -work work $LIB_FILES $TOP_FILE_L
+    	vcom -work work $TB_FILES 
+        echo "Simulating post-layout"
+        # TODO:
+        # vsim work.$TOP_TB -do $SCRIPT_DIR/waves.do
 	;;
-
     *)
 	    echo "Invalid sim option."
-    	echo "Available options are: r s l"
+    	echo "Available options are: b s l"
 	;;
 esac

@@ -2,6 +2,8 @@
 #  This file contains ordered files to be compiled
 #
 
+TOP_TB="matrix_multiplier_tb.vhd"
+
 COMPILE_FILES=" $RTL_DIR/matrix_multiplier_pkg.vhd \
                 $RTL_DIR/ROM_coeff.vhd
                 $RTL_DIR/generic_reg.vhd \
@@ -13,7 +15,11 @@ COMPILE_FILES=" $RTL_DIR/matrix_multiplier_pkg.vhd \
                 $RTL_DIR/MM_controller.vhd \
                 $RTL_DIR/matrix_multiplier.vhd "
 
+TOP_FILE_B="$RTL_DIR/TOP_MM.vhd"
+TOP_FILE_S="$NETLIST_DIR/TOP_synth.v"
+TOP_FILE_L="$NETLIST_DIR/TOP_layout.v"
 TB_FILES="$RTL_DIR/TB/matrix_multiplier_tb.vhd"
 
-TOP_TB="matrix_multiplier_tb.vhd"
+# TODO: ADD pads
+LIB_FILES=""
 

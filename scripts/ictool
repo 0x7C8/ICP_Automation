@@ -9,7 +9,7 @@ source $SCRIPT_DIR/compile_list
 if [ $# -eq 0 ]
 then
     echo "Provide an option."
-    echo "Available options are: sim synth layout power"
+    echo "Available options: sim synth layout power"
 elif [ $1 == 'sim' ]
 then
     source $SCRIPT_DIR/simulate
@@ -28,5 +28,5 @@ then
 
 else
     echo "Invalid option."
-    echo "Available options are: sim synth layout power"
+    echo "Available options: sim synth layout power"
 fi
