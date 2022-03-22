@@ -3,11 +3,13 @@
 #   Simulation script
 #
 
-read -p 'Choose simulation mode (b, s, l): ' mode
+read -p 'Choose simulation mode (b s l v): ' mode
 
 cd $SIM_DIR
 rm -Rf *
 test -f modelsim.ini || cp $MODEL_SIM/modelsim_st65.ini ./modelsim.ini
+test -d reports || mkdir ./reports
+export SIM_REPORTS=$SIM_DIR/reports
 
 case $mode in
     b)
@@ -15,7 +17,7 @@ case $mode in
         vlog -work work $LIB_FILES
         vcom -work work $COMPILE_FILES $TOP_FILE_B $TB_FILES 
 	    echo "Simulating behavioural model"
-        vsim work.$TOP_TB_FILE -do $SCRIPT_DIR/waves.do
+        vsim work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
 	;;
     s)
         vlib work
@@ -24,8 +26,8 @@ case $mode in
         vlog -work work $LIB_FILES $TOP_FILE_S
         vcom -work work $TB_FILES 
         echo "Simulating post-synthesis"
-        # TODO:
-        # vsim work.$TOP_TB -do $SCRIPT_DIR/waves.do
+        # TODO: Add options for sdf input
+        vsim work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
 	;;
     l)
         vlib work
@@ -34,11 +36,19 @@ case $mode in
         vlog -work work $LIB_FILES $TOP_FILE_L
     	vcom -work work $TB_FILES 
         echo "Simulating post-layout"
-        # TODO:
-        # vsim work.$TOP_TB -do $SCRIPT_DIR/waves.do
+        # TODO: Add options for sdf input
+        vsim work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
+	;;
+    v)
+        vlib work
+        vlog -work work $LIB_FILES $TOP_FILE_L
+    	vcom -work work $TB_FILES 
+        echo "Generating VCD file"
+        # TODO: Add options for sdf input
+        vsim work.$TOP_TB_MODULE -do $SCRIPT_DIR/vcd.do > $SIM_REPORTS/vcd.log
 	;;
     *)
 	    echo "Invalid sim option."
-    	echo "Available options are: b s l"
+    	echo "Available options are: b s l v"
 	;;
 esac

@@ -23,3 +23,5 @@ TB_FILES="$RTL_DIR/TOP_TB.vhd"	# List of test-benches
 # Additional library files
 LIB_FILES="	$RTL_DIR/PADS_Jun2013.v\
 		    $RTL_DIR/SPHD110420.v "
+
+VCD_FILE="$NO_BACKUP_DIR/top_vcd.vcd"
