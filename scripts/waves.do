@@ -1,12 +1,17 @@
-set CURRENT_TB "sim/:matrix_multiplier_tb"
-set CURRENT_SIM "sim/:matrix_multiplier_tb:TOP_THING:MATRIX_THING"
+#
+# This is an example file for wave simulation
+#
 
-vsim work.matrix_multiplier_tb
+add wave -noupdate -expand -group ctrl $::env(TOP_TB_MODULE):clk
+add wave -noupdate -expand -group ctrl $::env(TOP_TB_MODULE):rst
+add wave -noupdate -expand -group ctrl $::env(TOP_TB_MODULE):IN_read
+add wave -noupdate -expand -group ctrl $::env(TOP_TB_MODULE):IN_load
 
-# TODO: create a loop that takes from the list
-add wave -position insertpoint ${CURRENT_SIM}:clk_top
-add wave -position insertpoint ${CURRENT_SIM}:rst
-add wave -position insertpoint -radix unsigned ${CURRENT_SIM}:CONTROLLER:address_A
+add wave -noupdate -expand -group data $::env(TOP_TB_MODULE):IN_data
+add wave -noupdate -expand -group data $::env(TOP_TB_MODULE):Out_data
 
-run 10 us
+TreeUpdate [SetDefaultTree]
+WaveRestoreCursors {{Cursor 1} {340612284 ps} 0}
+update
+run 5 us
 wave zoom full
