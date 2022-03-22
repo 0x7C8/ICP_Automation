@@ -10,16 +10,16 @@ TOP_TB_FILE="$TOP_TB.vhd"
 
 COMPILE_FILES=" $RTL_DIR/TIP_TOP.vhd\
                 $RTL_DIR/ROM.vhd\
-		            $RTL_DIR/Input_matrix.vhd\
-		            $RTL_DIR/MAC.vhd\
-		            $RTL_DIR/TOP_Accelerator.vhd\
-		            $RTL_DIR/Controller.vhd "
+		        $RTL_DIR/Input_matrix.vhd\
+		        $RTL_DIR/MAC.vhd\
+		        $RTL_DIR/TOP_Accelerator.vhd\
+		        $RTL_DIR/Controller.vhd "
 
-TOP_FILE_B="$RTL_DIR/TIP_TOP.vhd"
-TOP_FILE_S="$NETLIST_DIR/TIP_TOP.v"
-TOP_FILE_L="$NETLIST_DIR/GPLVT_TIP_TOP.v"
+TOP_FILE_B="$RTL_DIR/TIP_TOP.vhd" # Top behavioural file
+TOP_FILE_S="$NETLIST_DIR/TIP_TOP.v" # Top post-synthesis 
+TOP_FILE_L="$NETLIST_DIR/GPLVT_TIP_TOP.v" # Top post-layout
 TB_FILES="$RTL_DIR/TOP_TB.vhd"	# List of test-benches
 
-# TODO: ADD pads
+# Additional library files
 LIB_FILES="	$RTL_DIR/PADS_Jun2013.v\
-		        $RTL_DIR/SPHD110420.v "
+		    $RTL_DIR/SPHD110420.v "
