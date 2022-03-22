@@ -24,5 +24,6 @@ LIB_FILES="	$RTL_DIR/PADS_Jun2013.v\
 		    $RTL_DIR/SPHD110420.v "
 
 SDF_FILE_S="$NETLIST_DIR/top_sdf_synth.sdf"
+SDC_FILE="$NETLIST_DIR/top_sdf_synth.sdc"
 SDF_FILE_L="$NETLIST_DIR/top_sdf_layout.sdf"
 VCD_FILE="$NO_BACKUP_DIR/top_vcd.vcd"

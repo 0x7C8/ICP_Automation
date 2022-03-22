@@ -30,9 +30,11 @@ ictool
 │   │   waves.do    (user defined)
 |   |   vcd.do      (user defined)
 │
-└── synthesis (TODO)
-|   |   (TODO)
-│    
+└── synthesis (WIP)
+|   └──synthesis.tcl (WIP)
+|       |   (TODO)  (user defined)
+|       |   
+│       
 └── layout (TODO)
 |   |   (TODO)
 │    

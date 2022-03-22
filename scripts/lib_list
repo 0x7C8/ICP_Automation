@@ -16,5 +16,7 @@ export BUF_LIB_LPHVT=$STM065_DIR/CORE65LPHVT_5.1/libs
 export BUF_LIB_LPLVT=$STM065_DIR/CORE65LPLVT_5.1/libs
 export BUF_LIB_LPSVT=$STM065_DIR/CORE65LPSVT_5.1/libs
 
-# TODO:
-# export PADS_LIB=$PADS_DIR
+# Other libs
+CMPSTM=/usr/local-eit/cad2/cmpstm
+export RAM_LIB=$CMPSTM/mem2011/SPHD110420-48158@1.0/libs
+export PADS_LIB=$CMPSTM/dicp18/LU_PADS_65nm
