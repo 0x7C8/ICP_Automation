@@ -2,7 +2,9 @@
 #  This file contains ordered files to be compiled
 #
 
-TOP_TB="matrix_multiplier_tb.vhd"
+TOP_TB="matrix_multiplier_tb"
+TOP_TB_MODULE="TOP_MM"
+TOP_TB_FILE="$TOP_TB.vhd"
 
 COMPILE_FILES=" $RTL_DIR/matrix_multiplier_pkg.vhd \
                 $RTL_DIR/ROM_coeff.vhd

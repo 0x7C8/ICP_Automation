@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+#  This file contains settings for simulations
+#
+
+SIM_SYNTH_OPT=" -t 1ps \
+                +nowarn8470 \
+                +nowarn8470 \ 
+                -sdftyp /$TOP_TB/$TOP_TB_MODULE=$NETLIST_DIR/Top_module_synth.sdf"
+
+SIM_LAYOUT_OPT="-t 1ps \
+                +nowarn8470 \
+                +nowarn8470 \ 
+                -sdftyp /$TOP_TB/$TOP_TB_MODULE=$NETLIST_DIR/Top_module_layout.sdf"
+
+

@@ -13,14 +13,15 @@ echo "alias ictool='source [your_folder]/scripts/ictool'" >> ~/.bash_aliases
 ## Script call structure
 ```
 setup_icp
-│   project_dirs  (user defined)
+│   project_dirs    (user defined)
 
 ictool
-|   lib_list (user defined)
-|   compile_list (user defined)
+|   lib_list        (user defined)
+|   compile_list    (user defined)
 |
 └── simulate (WIP)
-│   │   waves.do (user defined)
+|   |   sim_prefs   (user defined)
+│   │   waves.do    (user defined)
 │
 └── synthesis (TODO)
 |   |   (TODO)
@@ -28,7 +29,7 @@ ictool
 └── layout (TODO)
 │    
 └── power (WIP)
-    |   power.tcl
+    |   power.tcl (WIP)
 ```
 
 ## Considerations
