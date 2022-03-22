@@ -6,11 +6,11 @@
 SIM_SYNTH_OPT=" -t 1ps \
                 +nowarn8470 \
                 +nowarn8470 \ 
-                -sdftyp /$TOP_TB/$TOP_TB_MODULE=$NETLIST_DIR/Top_module_synth.sdf"
+                -sdftyp /$TOP_TB/$TOP_TB_MODULE=$SDF_FILE_S"
 
 SIM_LAYOUT_OPT="-t 1ps \
                 +nowarn8470 \
                 +nowarn8470 \ 
-                -sdftyp /$TOP_TB/$TOP_TB_MODULE=$NETLIST_DIR/Top_module_layout.sdf"
+                -sdftyp /$TOP_TB/$TOP_TB_MODULE=$SDF_FILE_L"
 
 

@@ -1,7 +1,6 @@
 #!/bin/bash
 #
-#   This file specifies testbecnch and top file, and contains 
-#   files to be compiled 
+#   This file contains file mapping, and specifies testbecnch and top file 
 #
 
 TOP_TB="TOP_TB"	# File name
@@ -24,4 +23,6 @@ TB_FILES="$RTL_DIR/TOP_TB.vhd"	# List of test-benches
 LIB_FILES="	$RTL_DIR/PADS_Jun2013.v\
 		    $RTL_DIR/SPHD110420.v "
 
+SDF_FILE_S="$NETLIST_DIR/top_sdf_synth.sdf"
+SDF_FILE_L="$NETLIST_DIR/top_sdf_layout.sdf"
 VCD_FILE="$NO_BACKUP_DIR/top_vcd.vcd"

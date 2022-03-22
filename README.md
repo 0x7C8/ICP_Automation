@@ -23,7 +23,7 @@ setup_icp
 
 ictool
 |   lib_list        (user defined)
-|   compile_list    (user defined)
+|   file_list       (user defined)
 |
 └── simulate (WIP)
 |   |   sim_prefs   (user defined)
@@ -34,6 +34,7 @@ ictool
 |   |   (TODO)
 │    
 └── layout (TODO)
+|   |   (TODO)
 │    
 └── power (WIP)
     |   power.tcl (WIP)
