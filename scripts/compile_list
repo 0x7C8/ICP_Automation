@@ -4,26 +4,22 @@
 #   files to be compiled 
 #
 
-TOP_TB="matrix_multiplier_tb"
-TOP_TB_MODULE="TOP_MM"
+TOP_TB="TOP_TB"	# File name
+TOP_TB_MODULE="tb_tip_top" # Entity
 TOP_TB_FILE="$TOP_TB.vhd"
 
-COMPILE_FILES=" $RTL_DIR/matrix_multiplier_pkg.vhd \
-                $RTL_DIR/ROM_coeff.vhd
-                $RTL_DIR/generic_reg.vhd \
-                $RTL_DIR/generic_reg_array.vhd \ 
-                $RTL_DIR/generic_reg_matrix.vhd \
-                $RTL_DIR/element_multiplier.vhd \
-                $RTL_DIR/MU2.vhd \
-                $RTL_DIR/MM_op.vhd \
-                $RTL_DIR/MM_controller.vhd \
-                $RTL_DIR/matrix_multiplier.vhd "
+COMPILE_FILES=" $RTL_DIR/TIP_TOP.vhd\
+                $RTL_DIR/ROM.vhd\
+		            $RTL_DIR/Input_matrix.vhd\
+		            $RTL_DIR/MAC.vhd\
+		            $RTL_DIR/TOP_Accelerator.vhd\
+		            $RTL_DIR/Controller.vhd "
 
-TOP_FILE_B="$RTL_DIR/TOP_MM.vhd"
-TOP_FILE_S="$NETLIST_DIR/TOP_synth.v"
-TOP_FILE_L="$NETLIST_DIR/TOP_layout.v"
-TB_FILES="$RTL_DIR/TB/matrix_multiplier_tb.vhd"
+TOP_FILE_B="$RTL_DIR/TIP_TOP.vhd"
+TOP_FILE_S="$NETLIST_DIR/TIP_TOP.v"
+TOP_FILE_L="$NETLIST_DIR/GPLVT_TIP_TOP.v"
+TB_FILES="$RTL_DIR/TOP_TB.vhd"	# List of test-benches
 
 # TODO: ADD pads
-LIB_FILES=""
-
+LIB_FILES="	$RTL_DIR/PADS_Jun2013.v\
+		        $RTL_DIR/SPHD110420.v "
