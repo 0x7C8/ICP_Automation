@@ -1,6 +1,6 @@
 # ICP Automation
 ## Introduction
-This is work in progress automation of toolchain for IC Project course.
+This project is automation of toolchain for IC Project course.
 
 ## Initial setup
 In the main directory run the following in command line and then reload the terminal:
@@ -9,6 +9,12 @@ touch ~/.bash_aliases
 echo "alias icp='source $PWD/scripts/setup_icp'" >> ~/.bash_aliases
 echo "alias ictool='source $PWD/scripts/ictool'" >> ~/.bash_aliases
 ```
+After this `setup_icp` can be easily called by `icp`.
+
+## What it does
+`setup_icp` : sets up environment (QuestaSim, Genus, Encounter, PrimeTime and STM Libraries) for Digital IC design. 
+
+`ictool` : toolchain script.
 
 ## Script call structure
 ```
@@ -22,6 +28,7 @@ ictool
 └── simulate (WIP)
 |   |   sim_prefs   (user defined)
 │   │   waves.do    (user defined)
+|   |   vcd.do      (user defined)
 │
 └── synthesis (TODO)
 |   |   (TODO)

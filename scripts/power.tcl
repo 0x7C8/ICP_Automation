@@ -1,3 +1,6 @@
+#
+#   This is an example tcl script for power analysis with PrimeTime
+#
 
 remove_design - all
 

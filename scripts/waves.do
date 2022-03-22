@@ -1,5 +1,5 @@
 #
-# This is an example file for wave simulation
+#   This is an example file for wave simulation
 #
 
 add wave -noupdate -expand -group ctrl $::env(TOP_TB_MODULE):clk
