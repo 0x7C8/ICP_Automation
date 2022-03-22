@@ -1,1 +1,4 @@
-echo "Starting Encounter."
+#!/bin/bash
+#
+#   Layout script
+#

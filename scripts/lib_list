@@ -1,4 +1,7 @@
-
+#!/bin/bash
+#
+#   This file contains different power-voltage libary paths 
+#
 
 export CLK_LIB_LPHVT=$STM065_DIR/CLOCK65LPHVT_3.1/libs
 export CLK_LIB_LPSVT=$STM065_DIR/CLOCK65LPSVT_3.1/libs

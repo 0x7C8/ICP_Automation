@@ -1,5 +1,7 @@
+#!/bin/bash
 #
-#  This file contains ordered files to be compiled
+#   This file specifies testbecncha and top file, and contains 
+#   files to be compiled 
 #
 
 TOP_TB="matrix_multiplier_tb"
