@@ -3,11 +3,11 @@
 This is work in progress automation of toolchain for IC Project course.
 
 ## Initial setup
-Add custom commands to your command line and then reload the terminal:
+In the main directory run the following in command line and then reload the terminal:
 ```
 touch ~/.bash_aliases
-echo "alias icp='source [your_folder]/scripts/setup_icp'" >> ~/.bash_aliases
-echo "alias ictool='source [your_folder]/scripts/ictool'" >> ~/.bash_aliases
+echo "alias icp='source $PWD/scripts/setup_icp'" >> ~/.bash_aliases
+echo "alias ictool='source $PWD/scripts/ictool'" >> ~/.bash_aliases
 ```
 
 ## Script call structure
