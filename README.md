@@ -23,6 +23,7 @@ setup_icp
 
 ictool
 |   lib_list        (user defined)
+|   lib_prefs       (user defined)
 |   file_list       (user defined)
 |
 └── simulate (WIP)
@@ -30,10 +31,9 @@ ictool
 │   │   waves.do    (user defined)
 |   |   vcd.do      (user defined)
 │
-└── synthesis (WIP)
-|   └──synthesis.tcl (WIP)
-|       |   (TODO)  (user defined)
-|       |   
+└── synthesis
+|   └──synthesis.tcl
+|       |   synth_prefs.tcl  (user defined) 
 │       
 └── layout (TODO)
 |   |   (TODO)
