@@ -3,27 +3,32 @@
 #   This file contains file mapping, and specifies testbecnch and top file 
 #
 
-TOP_TB="TOP_TB"	# File name
-TOP_TB_MODULE="tb_tip_top" # Entity
-TOP_TB_FILE="$TOP_TB.vhd"
+export TOP_TB="matrix_multiplier_tb"	# File name
+export TOP_TB_MODULE="matrix_multiplier_tb" # Entity
+export TOP_TB_FILE="$TOP_TB.vhd"
 
-COMPILE_FILES=" $RTL_DIR/TIP_TOP.vhd\
-                $RTL_DIR/ROM.vhd\
-		        $RTL_DIR/Input_matrix.vhd\
-		        $RTL_DIR/MAC.vhd\
-		        $RTL_DIR/TOP_Accelerator.vhd\
-		        $RTL_DIR/Controller.vhd "
+export COMPILE_PKGS="$RTL_DIR/matrix_multiplier_pkg.vhd"
+export COMPILE_FILES="$RTL_DIR/generic_reg.vhd\
+		$RTL_DIR/element_multiplier.vhd\
+		$RTL_DIR/MM_controller.vhd\
+		$RTL_DIR/output_unit.vhd\
+		$RTL_DIR/MM_post.vhd\
+		$RTL_DIR/reg_array.vhd\
+		$RTL_DIR/reg_matrix.vhd\
+		$RTL_DIR/ROM_coeff.vhd\
+		$RTL_DIR/MM_op.vhd\
+		$RTL_DIR/matrix_multiplier.vhd"
 
-TOP_FILE_B="$RTL_DIR/TIP_TOP.vhd" # Top behavioural file
-TOP_FILE_S="$NETLIST_DIR/TIP_TOP.v" # Top post-synthesis 
-TOP_FILE_L="$NETLIST_DIR/GPLVT_TIP_TOP.v" # Top post-layout
-TB_FILES="$RTL_DIR/TOP_TB.vhd"	# List of test-benches
+export TOP_FILE_B="$RTL_DIR/TOP_MM.vhd" # Top behavioural file
+export TOP_FILE_S="$NETLIST_DIR/TIP_TOP.v" # Top post-synthesis 
+export TOP_FILE_L="$NETLIST_DIR/GPLVT_TIP_TOP.v" # Top post-layout
+export TB_FILES="$RTL_DIR/tb/matrix_multiplier_tb.vhd"	# List of test-benches
 
 # Additional library files
-LIB_FILES="	$RTL_DIR/PADS_Jun2013.v\
-		    $RTL_DIR/SPHD110420.v "
+export LIB_FILES="	$PADS_LIB/PADS_Jun2013.v\
+		$RAM_LIB/behaviour/verilog/SPHD110420.v"
 
-SDF_FILE_S="$NETLIST_DIR/top_sdf_synth.sdf"
-SDC_FILE="$NETLIST_DIR/top_sdf_synth.sdc"
-SDF_FILE_L="$NETLIST_DIR/top_sdf_layout.sdf"
-VCD_FILE="$NO_BACKUP_DIR/top_vcd.vcd"
+export SDF_FILE_S="$NETLIST_DIR/top_sdf_synth.sdf"
+export SDC_FILE="$NETLIST_DIR/top_sdf_synth.sdc"
+export SDF_FILE_L="$NETLIST_DIR/top_sdf_layout.sdf"
+export VCD_FILE="$NO_BACKUP_DIR/top_vcd.vcd"

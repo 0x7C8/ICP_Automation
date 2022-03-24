@@ -18,16 +18,14 @@ set ClkSlew 500
 set InputDelay 500
 set OutputDelay 500
  
-set_attribute hdl_language vhdl     # Is this needed?
-set_attribute init_hdl_search_path $::env(RTL_DIR)   # Is this needed?
+# Is this needed?
+set_attribute init_hdl_search_path $::env(RTL_DIR)
 
 # TODO: This is inflexible, make a chose for CLK_LIB={choice}
-set_attribute init_lib_search_path {\
-    $::env(CLK_LIB_LPHVT)\
-    $::env(BUF_LIB_LPHVT)\
-    $::env(RAM_LIB)\
-    $::env(PADS_LIB)\
-} /
+
+set LIB_PATHS  "$::env(CLK_LIB_LPHVT)/libs $::env(BUF_LIB_LPHVT)/libs $::env(RAM_LIB)/libs $::env(PADS_LIB)"
+
+set_attribute init_lib_search_path $LIB_PATHS
 
 set_attribute syn_generic_effort ${SYN_EFF}
 set_attribute syn_map_effort ${MAP_EFF}
@@ -42,7 +40,10 @@ SPHD110420_nom_1.20V_25C.lib \
 Pads_Oct2012.lib}
 
 puts "\n\n\n ANALYZE HDL DESIGN \n\n\n"
-read_hdl $::env(COMPILE_FILES)
+# TODO: if there are verilog files add read_hdl with verilog setting
+read_hdl -vhdl $::env(COMPILE_PKGS) 
+read_hdl -vhdl $::env(COMPILE_FILES) 
+read_hdl -vhdl $::env(TOP_FILE_B)
 
 puts "\n\n\n ELABORATE \n\n\n"
 elaborate
