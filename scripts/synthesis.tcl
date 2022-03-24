@@ -2,54 +2,25 @@
 #   This is synthesis tcl script
 #
 
-# TODO: move this in to separate file
-set SYN_EFF medium 
-set MAP_EFF medium 
-set OPT_EFF medium 
-
-# ALL values are in ps
-# TODO: move this in to separate file
-set PERIOD 10000
-set ClkName myCLK
-set ClkLatency 500
-set ClkRise_uncertainty 500
-set ClkFall_uncertainty 500
-set ClkSlew 500
-set InputDelay 500
-set OutputDelay 500
- 
-# Is this needed?
-set_attribute init_hdl_search_path $::env(RTL_DIR)
-
-# TODO: This is inflexible, make a chose for CLK_LIB={choice}
-
-set LIB_PATHS  "$::env(CLK_LIB_LPHVT)/libs $::env(BUF_LIB_LPHVT)/libs $::env(RAM_LIB)/libs $::env(PADS_LIB)"
+source $::env(SCRIPT_DIR)/synth_prefs.tcl
 
 set_attribute init_lib_search_path $LIB_PATHS
-
 set_attribute syn_generic_effort ${SYN_EFF}
 set_attribute syn_map_effort ${MAP_EFF}
 set_attribute syn_opt_effort ${OPT_EFF}
 set_attribute information_level 6
 
-# TODO: move this to other file
-set_attribute library { \
-CLOCK65LPHVT_nom_1.30V_125C.lib \
-CORE65LPHVT_nom_1.30V_125C.lib \
-SPHD110420_nom_1.20V_25C.lib \
-Pads_Oct2012.lib}
+set_attribute library $LIB_SEL
 
 puts "\n\n\n ANALYZE HDL DESIGN \n\n\n"
-# TODO: if there are verilog files add read_hdl with verilog setting
-read_hdl -vhdl $::env(COMPILE_PKGS) 
-read_hdl -vhdl $::env(COMPILE_FILES) 
-read_hdl -vhdl $::env(TOP_FILE_B)
+# read_hdl -v2001
+read_hdl -vhdl $::env(COMPILE_PKGS) $::env(COMPILE_FILES) $::env(TOP_FILE_B)
 
 puts "\n\n\n ELABORATE \n\n\n"
 elaborate
 
 
-define_clock -name $ClkName -period $PERIOD [find / -port clk_top]
+define_clock -name $ClkName -period $PERIOD [find / -port $::env(CLK_NAME)]
 set_attribute clock_network_late_latency $ClkLatency $ClkName
 set_attribute clock_source_late_latency  $ClkLatency $ClkName 
 set_attribute clock_setup_uncertainty $ClkLatency $ClkName

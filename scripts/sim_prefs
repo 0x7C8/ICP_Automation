@@ -3,14 +3,20 @@
 #   This file contains settings for different simulations
 #
 
-SIM_SYNTH_OPT=" -t 1ps \
-                +nowarn8470 \
-                +nowarn8470 \ 
-                -sdftyp /$TOP_TB/$TOP_TB_MODULE=$SDF_FILE_S"
+unset SIM_LIBS
+for val in $LIB_LIST_VAR; do SIM_LIBS="$SIM_LIBS -L $val$LIB_TYPE"; done;
+SIM_LIBS="$SIM_LIBS -L $LIB_LIST_STAT"
 
-SIM_LAYOUT_OPT="-t 1ps \
-                +nowarn8470 \
-                +nowarn8470 \ 
-                -sdftyp /$TOP_TB/$TOP_TB_MODULE=$SDF_FILE_L"
+SIM_SYNTH_OPT="\
+	-t 1ps \
+	+nowarn8470 \
+	+nowarn8470 \ 
+	-sdftyp /$TOP_TB/$TOP_TB_MODULE=$SDF_FILE_S"
+
+SIM_LAYOUT_OPT="\
+	-t 1ps \
+	+nowarn8470 \
+	+nowarn8470 \
+	-sdftyp /$TOP_TB/$TOP_TB_MODULE=$SDF_FILE_L"
 
 

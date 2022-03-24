@@ -4,6 +4,7 @@
 #
 
 source $SCRIPT_DIR/lib_list
+source $SCRIPT_DIR/lib_prefs
 source $SCRIPT_DIR/file_list
 
 if [ $# -eq 0 ]

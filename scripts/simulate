@@ -10,17 +10,14 @@ rm -Rf *
 test -f modelsim.ini || cp $MODEL_SIM/modelsim_st65.ini ./modelsim.ini
 test -d reports || mkdir ./reports
 export SIM_REPORTS=$SIM_DIR/reports
-
-libraries="-L CORE65LPHVT \
-           -L CLOCK65LPHVT \
-           -L PRHS65 "
+source $SCRIPT_DIR/sim_prefs
 
 case $mode in
     b)
         vlib work
         vlog -work work $LIB_FILES
         vcom -work work $COMPILE_PKGS $COMPILE_FILES $TOP_FILE_B $TB_FILES 
-	    echo "Simulating behavioural model"
+	echo "Simulating behavioural model"
         vsim work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
 	;;
     s)
@@ -31,7 +28,7 @@ case $mode in
         vcom -work work $COMPILE_PKGS $TB_FILES 
         echo "Simulating post-synthesis"
         # TODO: Add options for sdf input
-        vsim $libraries work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
+        vsim $SIM_LIBS work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
 	;;
     l)
         vlib work
