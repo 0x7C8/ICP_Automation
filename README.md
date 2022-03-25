@@ -14,6 +14,8 @@ After this `setup_icp` can be easily called by `icp`.
 ## What it does
 `setup_icp` : sets up environment (QuestaSim, Genus, Encounter, PrimeTime and STM Libraries) for Digital IC design. 
 
+`map_files` : sets environment variables like file and library names that are then used by different programs.
+
 `ictool` : toolchain script.
 
 ## Script call structure
@@ -44,6 +46,20 @@ ictool
 └── power (WIP)
     |   power.tcl (WIP)
 ```
+
+## Example
+### Synthesis:
+```
+update_proj
+ictool -o synth -p LPHVT -c bc -v 1.05 -t 105
+```
+If the options `-p LPHVT -c bc -v 1.05 -t 105` are not specified, then the defaults are used from `lib_prefs` file
+
+### Simulation:
+```
+ictool -o sim
+```
+
 
 ## Considerations
 * `setup_icp` script can stop working if the institution changes tools and their directories.
