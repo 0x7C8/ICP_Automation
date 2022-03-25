@@ -22,8 +22,6 @@ case $mode in
 	;;
     s)
         vlib work
-        # TODO: Depending on power-voltage choice append to LIB_FILES
-        # LIB_FILES = "$LIB_FILES"
         vlog -work work $LIB_FILES $TOP_FILE_S
         vcom -work work $COMPILE_PKGS $TB_FILES 
         echo "Simulating post-synthesis"
@@ -32,8 +30,6 @@ case $mode in
 	;;
     l)
         vlib work
-        # TODO: Depending on power-voltage choice append to LIB_FILES
-        # LIB_FILES = "$LIB_FILES"
         vlog -work work $LIB_FILES $TOP_FILE_L
     	vcom -work work $TB_FILES 
         echo "Simulating post-layout"

@@ -27,7 +27,7 @@ while getopts 'o:p:c:v:t:' OPTION; do
         ;;
     ?)
         echo "Invalid option. Available options:"
-        printf "Provide an option."
+        printf '\t -o \t Run option \n'
         printf "\t\t sim, synth, layout, power \n\n"
         printf '\t -p \t Process \n'
         printf '\t\t GPLVT, GPSVT, LPHVT, LPLVT, LPSVT \n\n'
@@ -58,7 +58,7 @@ case $RUN_OPTION in
         source $SCRIPT_DIR/power
         ;;
     *)
-    echo "Run option (-o) is not selected or invalid."
-    echo "Available run options: sim synth layout power"
+    echo "Run option (-o) is not selected."
+    echo "Available run options: sim, synth, layout, power"
         ;;
 esac
