@@ -46,7 +46,7 @@ syn_opt
 
 puts "\n\n\n EXPORT DESIGN \n\n\n"
 write_hdl    > $::env(TOP_FILE_S)
-write_sdc    > $::env(SDC_FILE)
+write_sdc    > $::env(SDC_FILE_S)
 write_sdf    > $::env(SDF_FILE_S)
 
 puts "\n\n\n REPORTING \n\n\n"

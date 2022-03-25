@@ -3,10 +3,6 @@
 #   Main toolchain script
 #
 
-source $SCRIPT_DIR/lib_list
-source $SCRIPT_DIR/lib_prefs
-source $SCRIPT_DIR/file_list
-
 while getopts "o:p:c:v:t:" OPTION; do
     case "$OPTION" in
     o)

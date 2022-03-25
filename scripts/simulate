@@ -17,35 +17,35 @@ case $mode in
         vlib work
         vlog -work work $LIB_FILES
         vcom -work work $COMPILE_PKGS $COMPILE_FILES $TOP_FILE_B $TB_FILES 
-	    echo "Simulating behavioural model"
+	echo "Simulating behavioural model"
         vsim work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
 	;;
     s)
         vlib work
         vlog -work work $LIB_FILES $TOP_FILE_S
         vcom -work work $COMPILE_PKGS $TB_FILES 
-        echo "Simulating post-synthesis"
+	echo "Simulating post-synthesis"
         # TODO: Add options for sdf input
         vsim $SIM_LIBS work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
 	;;
     l)
         vlib work
         vlog -work work $LIB_FILES $TOP_FILE_L
-    	vcom -work work $TB_FILES 
+    	vcom -work work $COMPILE_PKGS $TB_FILES 
         echo "Simulating post-layout"
         # TODO: Add options for sdf input
-        vsim work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
+        vsim $SIM_LIBS work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
 	;;
     v)
         vlib work
         vlog -work work $LIB_FILES $TOP_FILE_L
-    	vcom -work work $TB_FILES 
+    	vcom -work work $COMPILE_PKGS $TB_FILES 
         echo "Generating VCD file"
         # TODO: Add options for sdf input
-        vsim work.$TOP_TB_MODULE -do $SCRIPT_DIR/vcd.do > $SIM_REPORTS/vcd.log
+        vsim $SIM_LIBS work.$TOP_TB_MODULE -do $SCRIPT_DIR/vcd.do > $SIM_REPORTS/vcd.log
 	;;
     *)
-	    echo "Invalid sim option."
-    	echo "Available options are: b s l v"
+	echo "Invalid sim option."
+	echo "Available options are: b s l v"
 	;;
 esac

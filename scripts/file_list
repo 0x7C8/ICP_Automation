@@ -7,7 +7,8 @@
 export TOP_TB="matrix_multiplier_tb"	# File name
 export TOP_TB_MODULE="matrix_multiplier_tb" # Entity
 export TOP_TB_FILE="$TOP_TB.vhd"
-export CLK_NAME="clk_top"
+export TOP_CELL="TOP_MM"
+export CLK_NAME="ck"
 
 export COMPILE_PKGS="$RTL_DIR/matrix_multiplier_pkg.vhd"
 export COMPILE_FILES="\
@@ -23,8 +24,8 @@ export COMPILE_FILES="\
 	$RTL_DIR/matrix_multiplier.vhd"
 
 export TOP_FILE_B="$RTL_DIR/TOP_MM.vhd" # Top behavioural file
-export TOP_FILE_S="$NETLIST_DIR/TIP_TOP.v" # Top post-synthesis 
-export TOP_FILE_L="$NETLIST_DIR/GPLVT_TIP_TOP.v" # Top post-layout
+export TOP_FILE_S="$NETLIST_DIR/synth_netlist.v" # Top post-synthesis 
+export TOP_FILE_L="$NETLIST_DIR/pnr_netlist.v" # Top post-layout
 export TB_FILES="$RTL_DIR/tb/matrix_multiplier_tb.vhd"	# List of test-benches
 
 # Additional library files
@@ -32,7 +33,15 @@ export LIB_FILES="\
 	$PADS_LIB/PADS_Jun2013.v\
 	$RAM_LIB/behaviour/verilog/SPHD110420.v"
 
-export SDF_FILE_S="$NETLIST_DIR/top_sdf_synth.sdf"
-export SDC_FILE="$NETLIST_DIR/top_sdf_synth.sdc"
-export SDF_FILE_L="$NETLIST_DIR/top_sdf_layout.sdf"
-export VCD_FILE="$NO_BACKUP_DIR/top_vcd.vcd"
+# Synthesis
+export SDF_FILE_S="$NETLIST_DIR/synth_sdf.sdf"
+export SDC_FILE_S="$NETLIST_DIR/synth_sdc.sdc"
+
+# Layout
+export SDF_FILE_L="$NETLIST_DIR/pnr_sdf.sdf"
+export SDC_FILE_L="$NETLIST_DIR/pnr_sdc.sdc"
+export LAYOUT_DESIGN="$NETLIST_DIR/pnr_design.enc"
+export RC_SETUP="$NETLIST_DIR/setup.spef"
+export RC_HOLD="$NETLIST_DIR/hold.spef"
+
+export VCD_FILE="$NO_BACKUP_DIR/power_vcd.vcd"

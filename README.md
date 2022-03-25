@@ -7,6 +7,7 @@ In the main directory run the following in command line and then reload the term
 ```
 touch ~/.bash_aliases
 echo "alias icp='source $PWD/scripts/setup_icp'" >> ~/.bash_aliases
+echo "alias update_proj='source $SCRIPT_DIR/map_files'" >> ~/.bash_aliases
 ```
 After this `setup_icp` can be easily called by `icp`.
 
@@ -20,22 +21,25 @@ After this `setup_icp` can be easily called by `icp`.
 setup_icp
 │   project_dirs    (user defined)
 
-ictool
+map_files
 |   lib_list        (user defined)
 |   lib_prefs       (user defined)
 |   file_list       (user defined)
-|
+
+ictool
 └── simulate (WIP)
 |   |   sim_prefs   (user defined)
 │   │   waves.do    (user defined)
 |   |   vcd.do      (user defined)
 │
 └── synthesis
-|   └──synthesis.tcl
+|   └── synthesis.tcl
 |       |   synth_prefs.tcl  (user defined) 
 │       
-└── layout (TODO)
-|   |   (TODO)
+└── layout
+|   └── pnr_flow.tcl
+|       |   mmmc.view
+|       |   pad.io
 │    
 └── power (WIP)
     |   power.tcl (WIP)

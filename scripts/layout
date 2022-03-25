@@ -2,3 +2,6 @@
 #
 #   Layout script
 #
+
+cd $SOC_DIR
+encounter -file $SCRIPT_DIR/pnr/pnr_flow.tcl
