@@ -8,7 +8,7 @@ set OPT_EFF medium
 
 # Clock preferences (ps):
 set PERIOD 10000
-set ClkName myCLK
+set ClkName $::env(CLK_NAME) 
 set ClkLatency 500
 set ClkRise_uncertainty 500
 set ClkFall_uncertainty 500

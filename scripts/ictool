@@ -7,11 +7,10 @@ source $SCRIPT_DIR/lib_list
 source $SCRIPT_DIR/lib_prefs
 source $SCRIPT_DIR/file_list
 
-# TODO add additonal options for sim
-while getopts 'o:p:c:v:t:' OPTION; do
+while getopts "o:p:c:v:t:" OPTION; do
     case "$OPTION" in
     o)
-        RUN_OPTION="$OPTARG"
+        export RUN_OPTION="$OPTARG"
         ;;
     p)
         export LIB_TYPE="$OPTARG"

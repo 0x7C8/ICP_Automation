@@ -23,6 +23,9 @@ else
 
 # Custom Project directory setup
 source $PWD/scripts/project_dirs
+chmod +x $SCRIPT_DIR/ictool
+PATH="$SCRIPT_DIR:$PATH"
+
 
 # STM65 Libraries
   export STM065_DIR=/usr/local-eit/cad2/cmpstm/stm065v536

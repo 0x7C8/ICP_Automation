@@ -7,7 +7,6 @@ In the main directory run the following in command line and then reload the term
 ```
 touch ~/.bash_aliases
 echo "alias icp='source $PWD/scripts/setup_icp'" >> ~/.bash_aliases
-echo "alias ictool='source $PWD/scripts/ictool'" >> ~/.bash_aliases
 ```
 After this `setup_icp` can be easily called by `icp`.
 
