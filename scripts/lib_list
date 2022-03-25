@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#   This file contains different power-voltage libary paths 
+#   This file contains libary paths 
 #
 
 export LIB_LIST_VAR="CORE65 CLOCK65"

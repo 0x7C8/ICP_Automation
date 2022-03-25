@@ -1,34 +1,19 @@
 #!/bin/bash
 #
-#   This file contains user's prefered libraries
+#   This file contains prefered library options
 #
 
-# Type options: GPLVT GPSVT LPHVT LPLVT LPSVT
+# Type options:
+#   GPLVT GPSVT LPHVT LPLVT LPSVT
 export LIB_TYPE="LPHVT"
 
-# Case options: bc nom wc
+# Case options:
+#   bc nom wc
 export LIB_CASE="bc"
 
-# Voltage options (V) for LPHVT:
-# Best case: 1.05 1.10 1.15 1.25 1.30
-# Nominal case : 1.00 1.05 1.10 1.20 1.30
-# Worst case: 0.90 0.95 1.00 1.05 1.10 1.15
+# Voltage options (V):
 export LIB_VOLTAGE="1.05"
 
 ## Temperature options (C):
-## Best case :
-# m40
-# 105
-# 125
-#
-## Nominal case : 
-# 0 (1.00) 
-# 25 (1.00 1.10 1.20)
-# 125 (1.05 1.30)
-#
-## Worst case : 
-# m40 (0.90 0.95 1.00 1.05 1.10)
-# 105
-# 125
 export LIB_TEMP="105"
 

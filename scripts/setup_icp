@@ -15,11 +15,8 @@
 #
 
 if [ $PWD = $HOME ]; then
-  echo ""
-  echo "Initialization will not be performed in the login directory!"
-  echo ""
-  echo "Use a subdirectory!"
-  echo ""
+  printf '\n Initialization will not be performed in the login directory! \n\n'
+  printf 'Use a subdirectory! \n\n'
 else
 
 ######### Defining the environment and paths #########
@@ -39,7 +36,6 @@ source $PWD/scripts/project_dirs
   export SOCDIR=/usr/local-eit/cad2/cadence/edi142
   export ETSDIR=/usr/local-eit/cad2/cadence/ssv14
   export RTLDIR=/usr/local-eit/cad2/cadence/rc14
-
   export CDS_AUTO_64BIT=ALL
  
   cdsPath=$SOCDIR/tools/bin
@@ -48,7 +44,7 @@ source $PWD/scripts/project_dirs
 
 
   if [ "`echo $path | grep $cdsPath`" = "" ]; then
-        export PATH=$etsPath:$cdsPath:$rtlPath:$PATH
+    export PATH=$etsPath:$cdsPath:$rtlPath:$PATH
   fi
 
 
@@ -60,7 +56,7 @@ source $PWD/scripts/project_dirs
   PTPath=$PTROOT/bin
 
   if [ "`echo $path | grep $SynPath`" = "" ]; then
-        export PATH=$SynPath:$PTPath:$PATH
+    export PATH=$SynPath:$PTPath:$PATH
   fi
 
   export SYNOPSYS_DESIGN_LIB=`pwd`
@@ -77,7 +73,7 @@ source $PWD/scripts/project_dirs
   modelsimpath=$MODEL_SIM/bin
 
   if [ "`echo $path | grep $modelsimpath`" = "" ]; then
-        export PATH=$modelsimpath:$PATH
+    export PATH=$modelsimpath:$PATH
   fi
 
 

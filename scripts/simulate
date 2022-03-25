@@ -17,7 +17,7 @@ case $mode in
         vlib work
         vlog -work work $LIB_FILES
         vcom -work work $COMPILE_PKGS $COMPILE_FILES $TOP_FILE_B $TB_FILES 
-	echo "Simulating behavioural model"
+	    echo "Simulating behavioural model"
         vsim work.$TOP_TB_MODULE -do $SCRIPT_DIR/waves.do
 	;;
     s)
