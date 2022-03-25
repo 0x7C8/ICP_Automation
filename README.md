@@ -40,8 +40,8 @@ ictool
 │       
 └── layout
 |   └── pnr_flow.tcl
-|       |   mmmc.view
-|       |   pad.io
+|       |   mmmc.view   (user defined)
+|       |   pad.io      (user defined)
 │    
 └── power (WIP)
     |   power.tcl (WIP)
