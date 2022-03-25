@@ -7,27 +7,58 @@ source $SCRIPT_DIR/lib_list
 source $SCRIPT_DIR/lib_prefs
 source $SCRIPT_DIR/file_list
 
-if [ $# -eq 0 ]
-then
-    echo "Provide an option."
-    echo "Available options: sim synth layout power"
-elif [ $1 == 'sim' ]
-then
-    source $SCRIPT_DIR/simulate
+# TODO add additonal options for sim
+while getopts 'o:p:c:v:t:' OPTION; do
+    case "$OPTION" in
+    o)
+        RUN_OPTION="$OPTARG"
+        ;;
+    p)
+        export LIB_TYPE="$OPTARG"
+        ;;
+    c)
+        export LIB_CASE="$OPTARG"
+        ;;
+    v)
+        export LIB_VOLTAGE="$OPTARG"
+        ;;
+    t)
+        export LIB_TEMP="$OPTARG"
+        ;;
+    ?)
+        echo "Invalid option. Available options:"
+        printf "Provide an option."
+        printf "\t\t sim, synth, layout, power \n\n"
+        printf '\t -p \t Process \n'
+        printf '\t\t GPLVT, GPSVT, LPHVT, LPLVT, LPSVT \n\n'
+        printf '\t -c \t Case \n'
+        printf '\t\t bc (best case), nom (nominal), wc (worst case) \n\n'
+        printf '\t -v \t Voltage \n'
+        printf '\t\t {0.90 0.95 1.00 1.05 1.10 1.15 1.25 1.30} \n\n'
+        printf '\t -t \t Temperature \n'
+        printf '\t\t {m40 0 25 105 125} \n\n'
+        exit 1
+        ;;
+    esac
+done
 
-elif [ $1 == 'synth' ]
-then
-    source $SCRIPT_DIR/synthesis
+echo "Libary in use: ${LIB_TYPE}_${LIB_CASE}_${LIB_VOLTAGE}V_${LIB_TEMP}C"
 
-elif [ $1 == 'layout' ]
-then
-    source $SCRIPT_DIR/layout
-
-elif [ $1 == 'power' ]
-then
-    source $SCRIPT_DIR/power
-
-else
-    echo "Invalid option."
-    echo "Available options: sim synth layout power"
-fi
+case $RUN_OPTION in
+    sim)
+        source $SCRIPT_DIR/simulate
+        ;;
+    synth)
+        source $SCRIPT_DIR/synthesis
+        ;;
+    layout)
+        source $SCRIPT_DIR/layout
+        ;;
+    power)
+        source $SCRIPT_DIR/power
+        ;;
+    *)
+    echo "Run option (-o) is not selected or invalid."
+    echo "Available run options: sim synth layout power"
+        ;;
+esac
