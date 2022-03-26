@@ -11,11 +11,9 @@ echo "alias update_proj='source $SCRIPT_DIR/map_files'" >> ~/.bash_aliases
 ```
 After this `setup_icp` can be easily called by `icp`.
 
-## What it does
-`setup_icp` : sets up environment (QuestaSim, Genus, Encounter, PrimeTime and STM Libraries) for Digital IC design. 
-
-`map_files` : sets environment variables like file and library names that are then used by different programs.
-
+## What commands do
+`setup_icp` : sets up environment (QuestaSim, Genus, Encounter, PrimeTime and STM Libraries) for Digital IC design. \
+`map_files` : sets environment variables like file and library names that are then used by different programs. \
 `ictool` : toolchain script.
 
 ## Script call structure
@@ -47,7 +45,7 @@ ictool
     |   power.tcl (WIP)
 ```
 
-## Example
+## Examples
 ### Synthesis:
 ```
 update_proj
@@ -59,7 +57,20 @@ If the options `-p LPHVT -c bc -v 1.05 -t 105` are not specified, then the defau
 ```
 ictool -o sim
 ```
+And then choosing a simulation option: \
+`b` - behavioural model \
+`s` - post-synthesis design \
+`l` - post-layout design \
+`vcd` - post-layout simulation that generates vcd file
 
+### Layout:
+```
+ictool -o layout
+```
+### Power simulation:
+```
+ictool -o power
+```
 
 ## Considerations
 * `setup_icp` script can stop working if the institution changes tools and their directories.
