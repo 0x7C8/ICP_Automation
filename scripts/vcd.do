@@ -3,7 +3,7 @@
 #
 
 vcd file $::env(VCD_FILE)
-# TODO
-# vcd add -r $::env(TOP_TB_MODULE)
-run 5 us
-exit -force
+vcd add -r */$::env(TOP_CELL_INSTANCE)
+#add wave $::env(TOP_TB_MODULE):all
+run 10 us
+# exit -force

@@ -9,14 +9,10 @@ SIM_LIBS="$SIM_LIBS -L $LIB_LIST_STAT"
 
 SIM_SYNTH_OPT="\
 	-t 1ps \
-	+nowarn8470 \
-	+nowarn8470 \ 
-	-sdftyp /$TOP_TB/$TOP_TB_MODULE=$SDF_FILE_S"
+	-sdftyp $TOP_CELL_INSTANCE=$SDF_FILE_S"
 
 SIM_LAYOUT_OPT="\
 	-t 1ps \
-	+nowarn8470 \
-	+nowarn8470 \
-	-sdftyp /$TOP_TB/$TOP_TB_MODULE=$SDF_FILE_L"
+	-sdftyp $TOP_CELL_INSTANCE=$SDF_FILE_L"
 
 

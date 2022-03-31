@@ -20,3 +20,4 @@ export POWER_DIR=$PWD/power
 export NETLIST_DIR=$PWD/netlist
 
 export NO_BACKUP_DIR=/export/space/nobackup/$USER
+test -d $NO_BACKUP_DIR || mkdir $NO_BACKUP_DIR

@@ -8,6 +8,7 @@ export TOP_TB="matrix_multiplier_tb"	# File name
 export TOP_TB_MODULE="matrix_multiplier_tb" # Entity
 export TOP_TB_FILE="$TOP_TB.vhd"
 export TOP_CELL="TOP_MM"
+export TOP_CELL_INSTANCE="TOP_THING"
 export CLK_NAME="ck"
 
 export COMPILE_PKGS="$RTL_DIR/matrix_multiplier_pkg.vhd"
@@ -45,3 +46,5 @@ export RC_SETUP="$NETLIST_DIR/setup.spef"
 export RC_HOLD="$NETLIST_DIR/hold.spef"
 
 export VCD_FILE="$NO_BACKUP_DIR/power_vcd.vcd"
+#test -f $VCD_FILE || touch $VCD_FILE
+
