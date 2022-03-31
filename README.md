@@ -46,6 +46,12 @@ ictool
 ```
 
 ## Examples
+### Setup Environment:
+This allows user to call `genus`, `primetime`, `encounter`, `vsim` etc from command line:
+```
+icp
+```
+
 ### Synthesis:
 ```
 update_proj
