@@ -6,7 +6,6 @@
 #    Cadence Timing Analyser ETS/SSV ssv14
 #    Cadence RTL Compiler rc14
 #
-#    Synopsys v2015 Synthesis
 #    Synopsys PrimeTime v2018
 #
 #    Mentor Graphics QuestaSim v10.6_1
@@ -60,12 +59,6 @@ PATH="$SCRIPT_DIR:$PATH"
 
   if [ "`echo $path | grep $SynPath`" = "" ]; then
     export PATH=$SynPath:$PTPath:$PATH
-  fi
-
-  export SYNOPSYS_DESIGN_LIB=`pwd`
-
-  if [ ! -e .synopsys_dc.setup ]; then
-    cp $SYNOPSYS/dot.synopsys_dc.st65 .synopsys_dc.setup
   fi
 
 
