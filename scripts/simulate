@@ -39,7 +39,7 @@ case $mode in
         vlog -work work $LIB_FILES $TOP_FILE_L
     	vcom -work work $COMPILE_PKGS $TB_FILES 
         echo "Generating VCD file"
-        vsim $SIM_LIBS $SIM_LAYOUT_OPT work.$TOP_TB_MODULE -do $SCRIPT_DIR/vcd.do > $SIM_REPORTS/vcd.log
+        vsim $SIM_LIBS $SIM_LAYOUT_OPT work.$TOP_TB_MODULE -do $SCRIPT_DIR/vcd.do
 	;;
     *)
 	echo "Invalid sim option."

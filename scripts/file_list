@@ -46,5 +46,4 @@ export RC_SETUP="$NETLIST_DIR/setup.spef"
 export RC_HOLD="$NETLIST_DIR/hold.spef"
 
 export VCD_FILE="$NO_BACKUP_DIR/power_vcd.vcd"
-#test -f $VCD_FILE || touch $VCD_FILE
 
