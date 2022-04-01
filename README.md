@@ -27,7 +27,7 @@ map_files
 |   file_list       (user defined)
 
 ictool
-└── simulate (WIP)
+└── simulate
 |   |   sim_prefs   (user defined)
 │   │   waves.do    (user defined)
 |   |   vcd.do      (user defined)
@@ -41,8 +41,8 @@ ictool
 |       |   mmmc.view   (user defined)
 |       |   pad.io      (user defined)
 │    
-└── power (WIP)
-    |   power.tcl (WIP)
+└── power
+    |   power.tcl
 ```
 
 ## Examples
@@ -51,10 +51,13 @@ This allows user to call `genus`, `primetime`, `encounter`, `vsim` etc from comm
 ```
 icp
 ```
-
-### Synthesis:
+### Update project files
+This command should be run after `icp`, it updates the environt variables that are needed for `ictool`.
 ```
 update_proj
+```
+### Synthesis:
+```
 ictool -o synth -p LPHVT -c bc -v 1.05 -t 105
 ```
 If the options `-p LPHVT -c bc -v 1.05 -t 105` are not specified, then the defaults are used from `lib_prefs` file
