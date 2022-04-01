@@ -9,7 +9,7 @@ touch ~/.bash_aliases
 echo "alias icp='source $PWD/scripts/setup_icp'" >> ~/.bash_aliases
 echo "alias update_proj='source $SCRIPT_DIR/map_files'" >> ~/.bash_aliases
 ```
-After this `setup_icp` can be easily called by `icp`.
+After this `setup_icp` can be easily called by `icp`, and `map_files` by `update_proj`.
 
 ## What commands do
 `setup_icp` : sets up environment (QuestaSim, Genus, Encounter, PrimeTime and STM Libraries) for Digital IC design. \
