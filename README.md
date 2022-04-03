@@ -40,7 +40,7 @@ ictool
 │       
 └── layout
 |   └── pnr/pnr_flow.tcl    (wip)
-|       |   pnr/mmmc.view
+|       |   pnr/mmmc.view   (wip)
 |       |   pnr/pad.io      (user defined)
 │    
 └── power
