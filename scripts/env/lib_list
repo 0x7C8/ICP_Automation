@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+#   This file contains libary paths 
+#
+
+export LIB_LIST_VAR="CORE65 CLOCK65"
+export LIB_LIST_STAT="PRHS65"
+
+# Other libs
+export CMPSTM=/usr/local-eit/cad2/cmpstm
+export RAM_LIB=$CMPSTM/mem2011/SPHD110420-48158@1.0
+export PADS_LIB=$CMPSTM/dicp18/LU_PADS_65nm

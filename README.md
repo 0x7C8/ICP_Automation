@@ -7,9 +7,9 @@ In the main directory run the following in command line and then reload the term
 ```
 touch ~/.bash_aliases
 echo "alias icp='source $PWD/scripts/setup_icp'" >> ~/.bash_aliases
-echo "alias update_proj='source $SCRIPT_DIR/map_files'" >> ~/.bash_aliases
+echo "alias map_files='source $SCRIPT_DIR/map_files'" >> ~/.bash_aliases
 ```
-After this `setup_icp` can be easily called by `icp`, and `map_files` by `update_proj`.
+After this `setup_icp` can be easily called by `icp' from any directory.
 
 ## What commands do
 `setup_icp` : sets up environment (QuestaSim, Genus, Encounter, PrimeTime and STM Libraries) for Digital IC design. \
@@ -54,7 +54,7 @@ icp
 ### Update project files
 This command should be run after `icp`, it updates the environt variables that are needed for `ictool`.
 ```
-update_proj
+map_files
 ```
 ### Synthesis:
 ```

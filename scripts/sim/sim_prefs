@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+#   This file contains settings for different simulations
+#
+
+unset SIM_LIBS
+for val in $LIB_LIST_VAR; do SIM_LIBS="$SIM_LIBS -L $val$LIB_TYPE"; done;
+SIM_LIBS="$SIM_LIBS -L $LIB_LIST_STAT"
+
+SIM_SYNTH_OPT="\
+	-t 1ps \
+	-sdftyp $TOP_CELL_INSTANCE=$SDF_FILE_S"
+
+SIM_LAYOUT_OPT="\
+	-t 1ps \
+	-sdftyp $TOP_CELL_INSTANCE=$SDF_FILE_L"
+
+

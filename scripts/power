@@ -8,4 +8,4 @@ rm -Rf *
 test -d reports || mkdir ./reports
 export POWER_REPORTS=$POWER_DIR/reports
 
-pt_shell -f $SCRIPT_DIR/power.tcl
+pt_shell -f $SCRIPT_DIR/pwr/power.tcl

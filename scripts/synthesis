@@ -8,4 +8,4 @@ rm -Rf *
 test -d reports || mkdir ./reports
 export SYNTH_REPORTS=$SYNTH_DIR/reports
 
-genus -legacy_ui -f $SCRIPT_DIR/synthesis.tcl
+genus -legacy_ui -f $SCRIPT_DIR/synth/synthesis.tcl
