@@ -37,10 +37,7 @@ while getopts "o:p:c:v:t:" OPTION; do
     esac
 done
 
-echo "Libary in use: ${LIB_TYPE}_${LIB_CASE}_${LIB_VOLTAGE}V_${LIB_TEMP}C"
-# TODO: move this to separate file
-export CLK_LIB="CLOCK65${LIB_TYPE}_3.1"
-export BUF_LIB="CORE65${LIB_TYPE}_5.1"
+source $SCRIPT_DIR/lib_paths
 
 case $RUN_OPTION in
     sim)

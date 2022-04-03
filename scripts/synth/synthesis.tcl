@@ -4,7 +4,6 @@
 
 source $::env(SCRIPT_DIR)/synth/synth_prefs.tcl
 
-set_attribute init_lib_search_path $LIB_PATHS
 set_attribute syn_generic_effort ${SYN_EFF}
 set_attribute syn_map_effort ${MAP_EFF}
 set_attribute syn_opt_effort ${OPT_EFF}

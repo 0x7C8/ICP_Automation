@@ -1,22 +1,28 @@
 # Version:1.0 MMMC View Definition File
 # Do Not Remove Above Line
 
-create_rc_corner -name FF -cap_table {/usr/local-eit/cad2/cmpstm/stm065v536/EncounterTechnoKit_cmos065_7m4x0y2z_AP@5.3.1/TECH/cmos065_7m4x0y2z_AP_Best.captable} -T {-40} -preRoute_res {1.0} -preRoute_cap {1.0} -preRoute_clkres {0.0} -preRoute_clkcap {0.0} -postRoute_res {1.0} -postRoute_cap {1.0} -postRoute_xcap {1.0} -postRoute_clkres {0.0} -postRoute_clkcap {0.0}
+# Capacitance tables
+create_rc_corner -name FF -cap_table $::env(CAP_FF) -T {-40} -preRoute_res {1.0} -preRoute_cap {1.0} -preRoute_clkres {0.0} -preRoute_clkcap {0.0} -postRoute_res {1.0} -postRoute_cap {1.0} -postRoute_xcap {1.0} -postRoute_clkres {0.0} -postRoute_clkcap {0.0}
+create_rc_corner -name SS -cap_table $::env(CAP_SS) -T {125} -preRoute_res {1.0} -preRoute_cap {1.0} -preRoute_clkres {0.0} -preRoute_clkcap {0.0} -postRoute_res {1.0} -postRoute_cap {1.0} -postRoute_xcap {1.0} -postRoute_clkres {0.0} -postRoute_clkcap {0.0}
 
-create_rc_corner -name SS -cap_table {/usr/local-eit/cad2/cmpstm/stm065v536/EncounterTechnoKit_cmos065_7m4x0y2z_AP@5.3.1/TECH/cmos065_7m4x0y2z_AP_Worst.captable} -T {125} -preRoute_res {1.0} -preRoute_cap {1.0} -preRoute_clkres {0.0} -preRoute_clkcap {0.0} -postRoute_res {1.0} -postRoute_cap {1.0} -postRoute_xcap {1.0} -postRoute_clkres {0.0} -postRoute_clkcap {0.0}
+# Operating conditions
+create_op_cond -name BCCON -library_file $::env(BEST_OP) -P {1} -V {1.30} -T {-40}
+create_op_cond -name WCCOM -library_file $::env(WORST_OP) -P {1} -V {0.90} -T {125}
 
-create_op_cond -name BCCON -library_file {/usr/local-eit/cad2/cmpstm/stm065v536/CORE65LPHVT_5.1/libs/CORE65LPHVT_bc_1.30V_m40C.lib} -P {1} -V {1.30} -T {-40}
-create_op_cond -name WCCOM -library_file {/usr/local-eit/cad2/cmpstm/stm065v536/CORE65LPHVT_5.1/libs/CORE65LPHVT_wc_0.95V_125C.lib} -P {1} -V {0.90} -T {125}
+# Timing libraries
+create_library_set -name FF -timing $::env(TIMING_FF)
+create_library_set -name SS -timing $::env(TIMING_SS)
 
-create_library_set -name SS -timing {/usr/local-eit/cad2/cmpstm/stm065v536/CORE65LPHVT_5.1/libs/CORE65LPHVT_wc_0.95V_125C.lib /usr/local-eit/cad2/cmpstm/stm065v536/CLOCK65LPHVT_3.1/libs/CLOCK65LPHVT_wc_0.90V_125C.lib /usr/local-eit/cad2/cmpstm/mem2011/SPHD110420-48158@1.0/libs/SPHD110420_wc_1.10V_125C.lib /usr/local-eit/cad2/cmpstm/stm065v536/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_7.2/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_0.90V_125C.lib /usr/local-eit/cad2/cmpstm/stm065v536/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_7.0/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_0.90V_1.65V_125C.lib /usr/local-eit/cad2/cmpstm/dicp18/LU_PADS_65nm/Pads_Oct2012.lib}
-
-create_library_set -name FF -timing {/usr/local-eit/cad2/cmpstm/stm065v536/CLOCK65LPHVT_3.1/libs/CLOCK65LPHVT_bc_1.30V_m40C.lib /usr/local-eit/cad2/cmpstm/stm065v536/CORE65LPHVT_5.1/libs/CORE65LPHVT_bc_1.30V_m40C.lib /usr/local-eit/cad2/cmpstm/mem2011/SPHD110420-48158@1.0/libs/SPHD110420_bc_1.30V_m40C.lib /usr/local-eit/cad2/cmpstm/stm065v536/IO65LP_SF_TF_BASIC_50A_ST_7M4X0Y2Z_7.2/libs/IO65LP_SF_TF_BASIC_50A_ST_7M4X0Y2Z_bc_1.30V_m40C.lib /usr/local-eit/cad2/cmpstm/stm065v536/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_7.0/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.30V_1.95V_m40C.lib /usr/local-eit/cad2/cmpstm/dicp18/LU_PADS_65nm/Pads_Oct2012.lib}
-
+# Constraints
 create_constraint_mode -name Clock_Constraints -sdc_files $::env(SDC_FILE_S)
 
-create_delay_corner -name FF -library_set {FF} -opcond_library {/usr/local-eit/cad2/cmpstm/stm065v536/CORE65LPHVT_5.1/libs/CORE65LPHVT_bc_1.30V_m40C.lib} -opcond {BCCON} -rc_corner {FF}
-create_delay_corner -name SS -library_set {SS} -opcond_library {/usr/local-eit/cad2/cmpstm/stm065v536/CORE65LPHVT_5.1/libs/CORE65LPHVT_wc_0.95V_125C.lib} -opcond {WCCOM} -rc_corner {SS}
+# Delay corners
+create_delay_corner -name FF -library_set {FF} -opcond_library $::env(BEST_OP) -opcond {BCCON} -rc_corner {FF}
+create_delay_corner -name SS -library_set {SS} -opcond_library $::env(WORST_OP) -opcond {WCCOM} -rc_corner {SS}
 
+# Analysis views
 create_analysis_view -name FF -constraint_mode {Clock_Constraints} -delay_corner {FF}
 create_analysis_view -name SS -constraint_mode {Clock_Constraints} -delay_corner {SS}
+
+# Which views are used in hold and setup analysis
 set_analysis_view -setup {SS} -hold {FF}

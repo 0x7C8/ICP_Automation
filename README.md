@@ -22,27 +22,29 @@ setup_icp
 │   project_dirs    (user defined)
 
 map_files
-|   lib_list        (user defined)
-|   lib_prefs       (user defined)
-|   file_list       (user defined)
+|   env/lib_list        (user defined)
+|   env/lib_prefs       (user defined)
+|   env/file_list       (user defined)
 
 ictool
+|   lib_paths		(user defined)
+|
 └── simulate
-|   |   sim_prefs   (user defined)
-│   │   waves.do    (user defined)
-|   |   vcd.do      (user defined)
+|   |   sim/sim_prefs   (user defined)
+│   │   sim/waves.do    (user defined)
+|   |   sim/vcd.do      (user defined)
 │
 └── synthesis
-|   └── synthesis.tcl
-|       |   synth_prefs.tcl  (user defined) 
+|   └── synth/synthesis.tcl
+|       |   synth/synth_prefs.tcl  (user defined) 
 │       
 └── layout
-|   └── pnr_flow.tcl
-|       |   mmmc.view   (user defined)
-|       |   pad.io      (user defined)
+|   └── pnr/pnr_flow.tcl
+|       |   pnr/mmmc.view
+|       |   pnr/pad.io      (user defined)
 │    
 └── power
-    |   power.tcl
+    |   pwr/power.tcl
 ```
 
 ## Examples

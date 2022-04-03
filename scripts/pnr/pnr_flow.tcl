@@ -43,16 +43,7 @@ set init_pwr_net VDD
 set init_gnd_net GND
 set init_io_file $::env(SCRIPT_DIR)/pnr/pads.io
 
-set init_lef_file {\
-/usr/local-eit/cad2/cmpstm/stm065v536/EncounterTechnoKit_cmos065_7m4x0y2z_AP@5.3.1/TECH/cmos065_7m4x0y2z_AP_Worst.lef \
-/usr/local-eit/cad2/cmpstm/stm065v536/CORE65LPHVT_5.1/CADENCE/LEF/CORE65LPHVT_soc.lef \
-/usr/local-eit/cad2/cmpstm/stm065v536/CLOCK65LPHVT_3.1/CADENCE/LEF/CLOCK65LPHVT_soc.lef \
-/usr/local-eit/cad2/cmpstm/stm065v536/PRHS65_7.0.a/CADENCE/LEF/PRHS65_soc.lef \
-/usr/local-eit/cad2/cmpstm/mem2011/SPHD110420-48158@1.0/LEF/SPHD110420.lef \
-/usr/local-eit/cad2/cmpstm/stm065v536/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_7.0/CADENCE/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_soc.lef \
-/usr/local-eit/cad2/cmpstm/stm065v536/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_7.2/CADENCE/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_soc.lef \
-/usr/local-eit/cad2/cmpstm/dicp18/LU_PADS_65nm/PADS_Jun2013.lef \
-}
+set init_lef_file $::env(INIT_LEF)
 
 set init_mmmc_file $::env(SCRIPT_DIR)/pnr/mmmc.view
 set init_oa_search_lib {}
