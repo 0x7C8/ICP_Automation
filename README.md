@@ -39,7 +39,7 @@ ictool
 |       |   synth/synth_prefs.tcl  (user defined) 
 │       
 └── layout
-|   └── pnr/pnr_flow.tcl
+|   └── pnr/pnr_flow.tcl    (wip)
 |       |   pnr/mmmc.view
 |       |   pnr/pad.io      (user defined)
 │    

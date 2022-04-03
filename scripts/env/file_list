@@ -10,6 +10,7 @@ export TOP_TB_FILE="$TOP_TB.vhd"
 export TOP_CELL="TOP_MM"
 export TOP_CELL_INSTANCE="TOP_THING"
 export CLK_NAME="ck"
+export MEM_INSTANCE="RAM_mem"
 
 export COMPILE_PKGS="$RTL_DIR/matrix_multiplier_pkg.vhd"
 export COMPILE_FILES="\
